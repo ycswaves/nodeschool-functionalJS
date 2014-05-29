@@ -1,0 +1,1 @@
+[functional js](http://nodeschool.io/#functionaljs) exercise from nodeschool.io
