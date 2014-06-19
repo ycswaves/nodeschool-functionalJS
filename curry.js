@@ -1,6 +1,14 @@
 function curryN(fn, n) {
-  return function () {
-    return fn.bind.apply(fn, [null].concat(arguments));
+  var n = n || fn.length;
+  var args = [];
+  return function curryFn(val){
+    if(args.length < n-1){
+      args.push(val);
+      return curryFn;
+    }
+    else{
+      return fn.apply(null, args.concat(val));
+    }
   }
 }
 
